@@ -12,8 +12,9 @@ DEVICE_PATH := device/sony/akari
 # Display
 TARGET_SCREEN_DENSITY := 440
 
-# Kernel
-TARGET_KERNEL_CONFIG := tama_akari_defconfig
+# Kernel: no monolithic tama_akari_defconfig in this kernel tree; use the
+# QSSI base defconfig plus the Sony akari fragment.
+TARGET_KERNEL_CONFIG := vendor/sdm845-perf_defconfig vendor/sony/akari.config
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
